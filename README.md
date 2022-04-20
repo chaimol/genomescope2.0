@@ -1,3 +1,7 @@
+### This version was clone from [tbenavi1/genomescope2.0](https://github.com/tbenavi1/genomescope2.0).
+**I modified the format of the output image to pdf so that the output is a vector image.**
+
+
 # GenomeScope 2.0: Reference-free profiling of polyploid genomes
 ## T. Rhyker Ranallo-Benavidez, Kamil S. Jaron, and Michael C. Schatz
 
