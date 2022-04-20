@@ -111,8 +111,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
   } else {
     ylabel_transform = paste("Coverage^", transform_exp, "*Frequency", sep="")
   }
-  png(paste(foldername, "/", arguments$name_prefix, "linear_plot.png", sep=""),
-  width=plot_size, height=plot_size, res=resolution)
+  pdf(paste(foldername, "/", arguments$name_prefix, "linear_plot.pdf", sep=""))
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_orig, type="n", main="GenomeScope Profile\n\n\n",
   xlab="Coverage", ylab=ylabel_orig, ylim=c(0,y_limit_orig), xlim=c(0,x_limit_orig),
@@ -125,8 +124,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
 #  }
   box(col="black")
 
-  png(paste(foldername, "/", arguments$name_prefix, "transformed_linear_plot.png", sep=""),
-  width=plot_size, height=plot_size, res=resolution)
+  pdf(paste(foldername, "/", arguments$name_prefix, "transformed_linear_plot.pdf", sep=""))
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_transform, type="n", main="GenomeScope Profile\n\n\n",
   xlab="Coverage", ylab=ylabel_transform, ylim=c(0,y_limit), xlim=c(0,x_limit),
@@ -140,8 +138,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
   box(col="black")
 
   ## Make a second plot in log space over entire range
-  png(paste(foldername, "/", arguments$name_prefix, "log_plot.png", sep=""),
-  width=plot_size, height=plot_size, res=resolution)
+  pdf(paste(foldername, "/", arguments$name_prefix, "log_plot.pdf", sep=""))
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_orig, type="n", main="GenomeScope Profile\n\n\n",
   xlab="Coverage", ylab=ylabel_orig, log="xy",
@@ -153,8 +150,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
   }
   box(col="black")
 
-  png(paste(foldername, "/", arguments$name_prefix, "transformed_log_plot.png", sep=""),
-  width=plot_size, height=plot_size, res=resolution)
+  pdf(paste(foldername, "/", arguments$name_prefix, "transformed_log_plot.pdf", sep=""))
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_transform, type="n", main="GenomeScope Profile\n\n\n",
   xlab="Coverage", ylab=ylabel_transform, log="xy",
@@ -820,7 +816,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
 
 	  ## Fitted histogram  
 
-	  png(paste(foldername, "/fitted_hist.png", sep=""), height = plot_size, width = plot_size, res=resolution)
+	  pdf(paste(foldername, "/fitted_hist.pdf", sep=""))
 	  layout(matrix(c(1,2), nrow=2, byrow = TRUE),heights=lcm(c(11,5.5)))
 	  par(mar=c(0,5,1,1))
   
