@@ -111,7 +111,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
   } else {
     ylabel_transform = paste("Coverage^", transform_exp, "*Frequency", sep="")
   }
-  png(paste(foldername, "/", arguments$name_prefix, "linear_plot.png", sep=""),
+  pdf(paste(foldername, "/", arguments$name_prefix, "linear_plot.pdf", sep=""),
   width=plot_size, height=plot_size, res=resolution)
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_orig, type="n", main="GenomeScope Profile\n\n\n",
@@ -125,7 +125,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
 #  }
   box(col="black")
 
-  png(paste(foldername, "/", arguments$name_prefix, "transformed_linear_plot.png", sep=""),
+  pdf(paste(foldername, "/", arguments$name_prefix, "transformed_linear_plot.pdf", sep=""),
   width=plot_size, height=plot_size, res=resolution)
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_transform, type="n", main="GenomeScope Profile\n\n\n",
@@ -140,7 +140,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
   box(col="black")
 
   ## Make a second plot in log space over entire range
-  png(paste(foldername, "/", arguments$name_prefix, "log_plot.png", sep=""),
+  pdf(paste(foldername, "/", arguments$name_prefix, "log_plot.pdf", sep=""),
   width=plot_size, height=plot_size, res=resolution)
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_orig, type="n", main="GenomeScope Profile\n\n\n",
@@ -153,7 +153,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
   }
   box(col="black")
 
-  png(paste(foldername, "/", arguments$name_prefix, "transformed_log_plot.png", sep=""),
+  pdf(paste(foldername, "/", arguments$name_prefix, "transformed_log_plot.pdf", sep=""),
   width=plot_size, height=plot_size, res=resolution)
   par(mar = c(5.1,4.1,6.1,2.1))
   plot(kmer_hist_transform, type="n", main="GenomeScope Profile\n\n\n",
