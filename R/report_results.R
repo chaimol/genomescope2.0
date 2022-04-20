@@ -820,7 +820,7 @@ report_results<-function(kmer_hist,kmer_hist_orig, k, p, container, foldername, 
 
 	  ## Fitted histogram  
 
-	  png(paste(foldername, "/fitted_hist.png", sep=""), height = plot_size, width = plot_size, res=resolution)
+	  pdf(paste(foldername, "/fitted_hist.pdf", sep=""), height = plot_size, width = plot_size, res=resolution)
 	  layout(matrix(c(1,2), nrow=2, byrow = TRUE),heights=lcm(c(11,5.5)))
 	  par(mar=c(0,5,1,1))
   
